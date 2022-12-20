@@ -9,6 +9,10 @@ export default defineUserConfig({
         text: 'Home',
         link: '/',
       },
+      {
+        text: 'Guide',
+        link: '/guide',
+      },
     ],
   }),
 })

@@ -1,4 +1,4 @@
-import { defineUserConfig, defaultTheme  } from 'vuepress'
+import { defineUserConfig, defaultTheme } from 'vuepress'
 
 export default defineUserConfig({
   // base:'/sino-lang.org/',

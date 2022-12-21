@@ -1,9 +1,9 @@
 ---
 home: true
 icon: home
-title: Sino Programming Language
+title: Sino 
 heroImage: /logo.jpg
-heroText: Sino
+heroText: Sino Programming Language
 tagline: A language empowering everyone to build reliable and efficient software.
 actions:
   - text: Get Started 💡
@@ -101,9 +101,3 @@ actions:
 
 copyright: false
 footer:  MIT Licensed, Copyright © 2021-present Mr.Hope
----
-
-This is an example of a project homepage. You can place your main content here.
-
-To use this layout, you need to set `home: true` in the page front matter.
-

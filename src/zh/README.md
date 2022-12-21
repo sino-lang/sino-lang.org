@@ -1,9 +1,9 @@
 ---
 home: true
 icon: home
-title: Sino程序设计语言
+title: Sino
 heroImage: /logo.jpg
-heroText: Sino
+heroText: Sino程序设计语言
 tagline: 一门赋予每个人构建可靠且高效软件能力的语言。。
 actions:
   - text: 马上开始 💡
@@ -100,9 +100,5 @@ actions:
 #     link: https://vuepress-theme-hope.github.io/v2/zh/guide/feature/
 copyright: false
 footer: MIT 协议, 版权所有 © 2021-present Mr.Hope
----
 
-这是项目主页的案例。你可以在这里放置你的主体内容。
-
-想要使用此布局，你需要在页面 front matter 中设置 `home: true`。
 

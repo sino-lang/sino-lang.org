@@ -1,9 +1,9 @@
 ---
 home: true
 icon: home
-title: Sino
-heroImage: /logo.svg
-heroText: Sino Programming Language
+title: Sino Programming Language
+heroImage: /logo.jpg
+heroText: Sino
 tagline: A language empowering everyone to build reliable and efficient software.
 actions:
   - text: Get Started 💡

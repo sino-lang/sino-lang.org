@@ -1,9 +1,9 @@
 ---
 home: true
 icon: home
-title: Sino
-heroImage: /logo.svg
-heroText: Sino程序设计语言
+title: Sino程序设计语言
+heroImage: /logo.jpg
+heroText: Sino
 tagline: 一门赋予每个人构建可靠且高效软件能力的语言。。
 actions:
   - text: 马上开始 💡

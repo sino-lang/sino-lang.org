@@ -1,18 +1,24 @@
 {
-  "name": "sino-lang.org",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "sino-lang",
+  "version": "0.0.1",
+  "description": "sino-lang.org.",
+  "main": "none.js",
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sino-lang/sino-lang.org.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sino-lang/sino-lang.org/issues"
+  },
+  "homepage": "https://github.com/sino-lang/sino-lang.org#readme",
   "devDependencies": {
-    "@vuepress/client": "2.0.0-beta.61",
-    "vue": "^3.2.47",
-    "vuepress": "2.0.0-beta.61"
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.3.7",
+    "postcss-cli": "^9.0.2"
   }
 }

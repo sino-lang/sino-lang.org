@@ -39,22 +39,22 @@ jobs:
 
       # 查看 workflow 的文档来获取更多信息
       # @see https://github.com/crazy-max/ghaction-github-pages
-      # - name: Deploy to GitHub Pages
-      #   uses: crazy-max/ghaction-github-pages@v2
-      #   with:
-      #     # 部署到 gh-pages 分支
-      #     target_branch: gh-pages
-      #     # 部署目录为 VuePress 的默认输出目录
-      #     build_dir: docs/.vuepress/dist
-      #   env:
-      #     # @see https://docs.github.com/cn/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
-      - uses: amondnet/vercel-action@v20 #deploy
+      - name: Deploy to GitHub Pages
+        uses: crazy-max/ghaction-github-pages@v2
         with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
-          github-token: ${{ secrets.GITHUB_TOKEN }} #Optional 
-          vercel-args: '--prod' #Optional
-          vercel-org-id: ${{ secrets.ORG_ID}}  #Required
-          vercel-project-id: ${{ secrets.PROJECT_ID}} #Required 
-          working-directory: ./docs/.vuepress/dist
+          # 部署到 gh-pages 分支
+          target_branch: gh-pages
+          # 部署目录为 VuePress 的默认输出目录
+          build_dir: docs/.vuepress/dist
+        env:
+          # @see https://docs.github.com/cn/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      # - uses: amondnet/vercel-action@v20 #deploy
+      #   with:
+      #     vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
+      #     github-token: ${{ secrets.GITHUB_TOKEN }} #Optional 
+      #     vercel-args: '--prod' #Optional
+      #     vercel-org-id: ${{ secrets.ORG_ID}}  #Required
+      #     vercel-project-id: ${{ secrets.PROJECT_ID}} #Required 
+      #     working-directory: ./docs/.vuepress/dist

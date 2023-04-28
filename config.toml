@@ -67,10 +67,10 @@ contentDir = "content/en"
 # Weight used for sorting.
 weight = 2
 
-[languages.zh-cn]
+[languages.zh]
 title = "Sino"
 description = "Sino 程序设计语言"
-languageName ="简体中文"
+languageName ="中文"
 # Weight used for sorting.
 weight = 1
 time_format_default = "2006.01.02"
@@ -121,14 +121,14 @@ url_latest_version = "https://example.com"
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
 github_repo = "https://github.com/google/docsy-example"
 # An optional link to a related project repo. For example, the sibling repository where your product code lives.
-github_project_repo = "https://github.com/google/docsy"
+github_project_repo = "https://github.com/sino-lang/sino-lang.org"
 
 # Specify a value here if your content directory is not in your repo's root directory
 # github_subdir = ""
 
 # Uncomment this if your GitHub repo does not have "main" as the default branch,
 # or specify a new value if you want to reference another branch in your GitHub links
-github_branch= "master"
+github_branch= "main"
 
 # Google Custom Search Engine ID. Remove or comment out to disable search.
 gcs_engine_id = "d72aa9b2712488cc3"

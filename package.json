@@ -1,24 +1,21 @@
 {
   "name": "sino-lang",
-  "version": "0.0.1",
-  "description": "sino-lang.org.",
-  "main": "none.js",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "generate": "nuxi generate",
+    "preview": "nuxi preview",
+    "lint": "eslint ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sino-lang/sino-lang.org.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sino-lang/sino-lang.org/issues"
-  },
-  "homepage": "https://github.com/sino-lang/sino-lang.org#readme",
   "devDependencies": {
-    "autoprefixer": "^10.4.0",
-    "postcss": "^8.3.7",
-    "postcss-cli": "^10.1.0"
+    "@nuxt-themes/docus": "latest",
+    "@nuxt/devtools": "^1.0.8",
+    "@nuxt/eslint-config": "^0.2.0",
+    "@nuxtjs/plausible": "^0.2.4",
+    "@types/node": "^20.11.24",
+    "eslint": "^8.57.0",
+    "nuxt": "^3.10.3"
   }
 }

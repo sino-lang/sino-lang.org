@@ -1,48 +1,141 @@
-name: docs
+# name: docs
+
+# on:
+#   # 每当 push 到 main 分支时触发部署
+#   push:
+#     branches: [main]
+#   # 手动触发部署
+#   workflow_dispatch:
+
+# jobs:
+#   docs:
+#     runs-on: ubuntu-latest
+
+#     steps:
+      
+#       - name: Checkout
+#         uses: actions/checkout@v3
+#         with:
+#           submodules: true
+#           fetch-depth: 0
+
+#       - name: Use Node.js 19.x
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: "19"
+
+#       - name: Cache NPM dependencies
+#         uses: actions/cache@v3
+#         with:
+#           path: node_modules
+#           key: ${{ runner.OS }}-npm-cache
+#           restore-keys: |
+#             ${{ runner.OS }}-npm-cache
+
+#       - name: Install Dependencies
+#         run: npm install
+
+#       - name: Setup Hugo
+#         uses: peaceiris/actions-hugo@v2
+#         with:
+#           hugo-version: 'latest'
+#           extended: true
+      
+#       - name: Build
+#         run: hugo --minify
+
+#       # 查看 workflow 的文档来获取更多信息
+#       # @see https://github.com/crazy-max/ghaction-github-pages
+#       - name: Deploy to Vercel Pages
+#         uses: amondnet/vercel-action@v25 #deploy
+#         with:
+#           vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
+#           github-token: ${{ secrets.GITHUB_TOKEN }} #Optional 
+#           vercel-args: '--prod' #Optional
+#           vercel-org-id: ${{ secrets.ORG_ID}}  #Required
+#           vercel-project-id: ${{ secrets.PROJECT_ID}} #Required 
+#           # working-directory: docs/.vuepress/dist
+
+
+# Sample workflow for building and deploying a Nuxt site to GitHub Pages
+#
+# To get started with Nuxt see: https://nuxtjs.org/docs/get-started/installation
+#
+name: Deploy Nuxt site to Pages
 
 on:
-  # 每当 push 到 main 分支时触发部署
+  # Runs on pushes targeting the default branch
   push:
-    branches: [main]
-  # 手动触发部署
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  docs:
+  # Build job
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+      - name: Detect package manager
+        id: detect-package-manager
+        run: |
+          if [ -f "${{ github.workspace }}/yarn.lock" ]; then
+            echo "manager=yarn" >> $GITHUB_OUTPUT
+            echo "command=install" >> $GITHUB_OUTPUT
+            exit 0
+          elif [ -f "${{ github.workspace }}/package.json" ]; then
+            echo "manager=npm" >> $GITHUB_OUTPUT
+            echo "command=ci" >> $GITHUB_OUTPUT
+            exit 0
+          else
+            echo "Unable to determine package manager"
+            exit 1
+          fi
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          submodules: true
-          fetch-depth: 0
-
-      - name: Use Node.js 19.x
-        uses: actions/setup-node@v3
+          node-version: "20"
+          cache: ${{ steps.detect-package-manager.outputs.manager }}
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
         with:
-          node-version: "19"
-
-      - name: Cache NPM dependencies
-        uses: actions/cache@v3
+          # Automatically inject router.base in your Nuxt configuration file and set
+          # target to static (https://nuxtjs.org/docs/configuration-glossary/configuration-target/).
+          #
+          # You may remove this line if you want to manage the configuration yourself.
+          static_site_generator: nuxt
+      - name: Restore cache
+        uses: actions/cache@v4
         with:
-          path: node_modules
-          key: ${{ runner.OS }}-npm-cache
+          path: |
+            dist
+            .nuxt
+          key: ${{ runner.os }}-nuxt-build-${{ hashFiles('dist') }}
           restore-keys: |
-            ${{ runner.OS }}-npm-cache
-
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+            ${{ runner.os }}-nuxt-build-
+      - name: Install dependencies
+        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+      - name: Static HTML export with Nuxt
+        run: ${{ steps.detect-package-manager.outputs.manager }} run generate
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          hugo-version: 'latest'
-          extended: true
-      
-      - name: Build
-        run: hugo --minify
+          path: ./dist
+
 
       # 查看 workflow 的文档来获取更多信息
       # @see https://github.com/crazy-max/ghaction-github-pages
@@ -54,4 +147,5 @@ jobs:
           vercel-args: '--prod' #Optional
           vercel-org-id: ${{ secrets.ORG_ID}}  #Required
           vercel-project-id: ${{ secrets.PROJECT_ID}} #Required 
-          # working-directory: docs/.vuepress/dist
+          working-directory: ./dist
+

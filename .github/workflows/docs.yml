@@ -73,7 +73,7 @@ on:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -140,7 +140,7 @@ jobs:
 
       - name: Static HTML export with Nuxt
         run: pnpm run generate
-        
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

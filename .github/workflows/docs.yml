@@ -106,6 +106,24 @@ jobs:
         with:
           node-version: "20"
           # cache: ${{ steps.detect-package-manager.outputs.manager }}
+      - uses: pnpm/action-setup@v3
+        name: Install pnpm
+        with:
+          version: 8
+          run_install: false
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
 
       - name: Restore cache
         uses: actions/cache@v4
@@ -116,10 +134,13 @@ jobs:
           key: ${{ runner.os }}-nuxt-build-${{ hashFiles('dist') }}
           restore-keys: |
             ${{ runner.os }}-nuxt-build-
+
       - name: Install dependencies
         run: pnpm install
+
       - name: Static HTML export with Nuxt
         run: pnpm run generate
+        
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

@@ -1,152 +1,54 @@
-# name: docs
-
-# on:
-#   # 每当 push 到 main 分支时触发部署
-#   push:
-#     branches: [main]
-#   # 手动触发部署
-#   workflow_dispatch:
-
-# jobs:
-#   docs:
-#     runs-on: ubuntu-latest
-
-#     steps:
-      
-#       - name: Checkout
-#         uses: actions/checkout@v3
-#         with:
-#           submodules: true
-#           fetch-depth: 0
-
-#       - name: Use Node.js 19.x
-#         uses: actions/setup-node@v3
-#         with:
-#           node-version: "19"
-
-#       - name: Cache NPM dependencies
-#         uses: actions/cache@v3
-#         with:
-#           path: node_modules
-#           key: ${{ runner.OS }}-npm-cache
-#           restore-keys: |
-#             ${{ runner.OS }}-npm-cache
-
-#       - name: Install Dependencies
-#         run: npm install
-
-#       - name: Setup Hugo
-#         uses: peaceiris/actions-hugo@v2
-#         with:
-#           hugo-version: 'latest'
-#           extended: true
-      
-#       - name: Build
-#         run: hugo --minify
-
-#       # 查看 workflow 的文档来获取更多信息
-#       # @see https://github.com/crazy-max/ghaction-github-pages
-#       - name: Deploy to Vercel Pages
-#         uses: amondnet/vercel-action@v25 #deploy
-#         with:
-#           vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
-#           github-token: ${{ secrets.GITHUB_TOKEN }} #Optional 
-#           vercel-args: '--prod' #Optional
-#           vercel-org-id: ${{ secrets.ORG_ID}}  #Required
-#           vercel-project-id: ${{ secrets.PROJECT_ID}} #Required 
-#           # working-directory: docs/.vuepress/dist
-
-
-# Sample workflow for building and deploying a Nuxt site to GitHub Pages
+# 构建 VitePress 站点并将其部署到 GitHub Pages 的示例工作流程
 #
-# To get started with Nuxt see: https://nuxtjs.org/docs/get-started/installation
-#
-name: Deploy Nuxt site to Pages
+name: Deploy VitePress site to Pages
 
 on:
-  # Runs on pushes targeting the default branch
+  # 在针对 `main` 分支的推送上运行。如果你
+  # 使用 `master` 分支作为默认分支，请将其更改为 `master`
   push:
-    branches: ["main"]
+    branches: [main]
 
-  # Allows you to run this workflow manually from the Actions tab
+  # 允许你从 Actions 选项卡手动运行此工作流程
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+# 设置 GITHUB_TOKEN 的权限，以允许部署到 GitHub Pages
 permissions:
   contents: write
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+# 只允许同时进行一次部署，跳过正在运行和最新队列之间的运行队列
+# 但是，不要取消正在进行的运行，因为我们希望允许这些生产部署完成
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: false
 
 jobs:
-  # Build job
+  # 构建工作
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      # - name: Detect package manager
-      #   id: detect-package-manager
-      #   run: |
-      #     if [ -f "${{ github.workspace }}/pnpm-lock.json" ]; then
-      #       echo "manager=pnpm" >> $GITHUB_OUTPUT
-      #       echo "command=install" >> $GITHUB_OUTPUT
-      #       exit 0
-      #     else
-      #       echo "Unable to determine package manager"
-      #       exit 1
-      #     fi
+        with:
+          fetch-depth: 0 # 如果未启用 lastUpdated，则不需要
+      - uses: pnpm/action-setup@v3 # 如果使用 pnpm，请取消注释
+      # - uses: oven-sh/setup-bun@v1 # 如果使用 Bun，请取消注释
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
-          # cache: ${{ steps.detect-package-manager.outputs.manager }}
-      - uses: pnpm/action-setup@v3
-        name: Install pnpm
-        with:
-          version: 8
-          run_install: false
-
-      - name: Get pnpm store directory
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-
-      - uses: actions/cache@v3
-        name: Setup pnpm cache
-        with:
-          path: ${{ env.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
-      - name: Restore cache
-        uses: actions/cache@v4
-        with:
-          path: |
-            dist
-            .nuxt
-          key: ${{ runner.os }}-nuxt-build-${{ hashFiles('dist') }}
-          restore-keys: |
-            ${{ runner.os }}-nuxt-build-
-
+          node-version: 20
+          cache: pnpm # 或 pnpm / yarn
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
       - name: Install dependencies
-        run: pnpm install
-
-      - name: Static HTML export with Nuxt
-        run: pnpm run generate
-
+        run: pnpm install # 或 pnpm install / yarn install / bun install
+      - name: Build with VitePress
+        run: pnpm docs:build # 或 pnpm docs:build / yarn docs:build / bun run docs:build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
-
-
+          path: docs/.vitepress/dist
       # 查看 workflow 的文档来获取更多信息
       # @see https://github.com/crazy-max/ghaction-github-pages
       - name: Deploy to Vercel Pages
@@ -157,5 +59,5 @@ jobs:
           vercel-args: '--prod' #Optional
           vercel-org-id: ${{ secrets.ORG_ID}}  #Required
           vercel-project-id: ${{ secrets.PROJECT_ID}} #Required 
-          working-directory: ./dist
+          working-directory: ./docs/.vitepress/dist
 

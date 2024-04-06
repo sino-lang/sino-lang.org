@@ -5,7 +5,7 @@ import { defineConfig, type DefaultTheme } from 'vitepress'
 // const pkg = require('vitepress/package.json')
 
 export const zh = defineConfig({
-  lang: 'zh-Hans',
+  lang: 'zh-CN',
   description: 'Sino程序设计语言',
 
   themeConfig: {
@@ -21,14 +21,14 @@ export const zh = defineConfig({
       // '/Nlog/': { base: '/learn/', items: sidebarReference() },
     },
 
-    // editLink: {
-    //   pattern: 'https://github.com/vuejs/vitepress/edit/main/docs/:path',
-    //   text: '在 GitHub 上编辑此页面'
-    // },
+    editLink: {
+      pattern: 'https://github.com/sino-lang/sino-lang.org/edit/main/docs/:path',
+      text: '在 GitHub 上编辑此页面'
+    },
 
     footer: {
       message: '基于 MIT 许可发布',
-      copyright: `版权所有 © 2019-${new Date().getFullYear()} Sino `
+      copyright: `版权所有 © Sino 基金会`
     },
 
     docFooter: {
@@ -61,7 +61,7 @@ function nav(): DefaultTheme.NavItem[] {
   return [
     {
       text: '安装',
-      link: '/install/what-is-vitepress',
+      link: '/install/how-to-install',
       activeMatch: '/install/'
     },
     {
@@ -73,6 +73,11 @@ function nav(): DefaultTheme.NavItem[] {
       text: '实验',
       link: '/playground/what-is-vitepress',
       activeMatch: '/playground/'
+    },
+    {
+      text: '文档',
+      link: '/docs/what-is-vitepress',
+      activeMatch: '/docs/'
     },
     {
       text: '工具',

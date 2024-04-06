@@ -12,18 +12,18 @@ export const en = defineConfig({
     nav: nav(),
 
     sidebar: {
-      '/en/guide/': { base: '/en/guide/', items: sidebarGuide() },
+      '/en/install/': { base: '/en/install/', items: sidebarGuide() },
       '/en/reference/': { base: '/en/reference/', items: sidebarReference() }
     },
 
     editLink: {
-      pattern: 'https://github.com/vuejs/vitepress/edit/main/docs/:path',
+      pattern: 'https://github.com/sino-lang/sino-lang.org/edit/main/docs/:path',
       text: 'Edit this page on GitHub'
     },
 
     footer: {
       message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2019-present Sino '
+      copyright: 'Copyright © Sino Foundation '
     }
   }
 })
@@ -32,38 +32,43 @@ function nav(): DefaultTheme.NavItem[] {
   return [
     {
       text: 'Install',
-      link: '/install/what-is-vitepress',
-      activeMatch: '/install/'
+      link: '/en/install/how-to-install',
+      activeMatch: '/en/install/'
     },
     {
       text: 'Learn',
-      link: '/learn/what-is-vitepress',
-      activeMatch: '/learn/'
+      link: '/en/learn/what-is-vitepress',
+      activeMatch: '/en/learn/'
     },
     {
       text: 'Playground',
-      link: '/playground/what-is-vitepress',
-      activeMatch: '/playground/'
+      link: '/en/playground/what-is-vitepress',
+      activeMatch: '/en/playground/'
+    },
+    {
+      text: 'Docs',
+      link: '/en/docs/what-is-vitepress',
+      activeMatch: '/en/docs/'
     },
     {
       text: 'Tools',
-      link: '/tools/what-is-vitepress',
-      activeMatch: '/tools/'
+      link: '/en/tools/what-is-vitepress',
+      activeMatch: '/en/tools/'
     },
     {
       text: 'Governance',
-      link: '/governance/what-is-vitepress',
-      activeMatch: '/governance/'
+      link: '/en/governance/what-is-vitepress',
+      activeMatch: '/en/governance/'
     },
     {
       text: 'Community',
-      link: '/community/what-is-vitepress',
-      activeMatch: '/community/'
+      link: '/en/community/what-is-vitepress',
+      activeMatch: '/en/community/'
     },
     {
       text: 'Blog',
-      link: '/blog/site-config',
-      activeMatch: '/blog/'
+      link: '/en/blog/site-config',
+      activeMatch: '/en/blog/'
     },
     // {
     //   text: pkg.version,

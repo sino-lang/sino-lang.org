@@ -16,7 +16,7 @@ export const zh = defineConfig({
       '/learn/': { base: '/learn/', items: sidebarReference() },
       // '/playground/': { base: '/learn/', items: sidebarReference() },
       // '/tools/': { base: '/learn/', items: sidebarReference() },
-      // '/Governance/': { base: '/learn/', items: sidebarReference() },
+      '/governance/': { base: '/governance/', items: sidebarGovernance() },
       // '/Community/': { base: '/learn/', items: sidebarReference() },
       // '/Nlog/': { base: '/learn/', items: sidebarReference() },
     },
@@ -85,8 +85,8 @@ function nav(): DefaultTheme.NavItem[] {
       activeMatch: '/tools/'
     },
     {
-      text: '团队',
-      link: '/governance/what-is-vitepress',
+      text: '治理',
+      link: '/governance/team',
       activeMatch: '/governance/'
     },
     {
@@ -236,4 +236,18 @@ export const search: DefaultTheme.AlgoliaSearchOptions['locales'] = {
       }
     }
   }
+}
+
+function sidebarGovernance(): DefaultTheme.SidebarItem[] {
+  return [
+    {
+      text: 'Governance',
+      collapsed: false,
+      items: [
+        { text: '团队', link: 'team' },
+        { text: 'RFC 流程', link: 'rfc' },
+        { text: '工作组', link: 'group' },
+      ]
+    },
+  ]
 }

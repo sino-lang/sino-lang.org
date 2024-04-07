@@ -13,7 +13,8 @@ export const en = defineConfig({
 
     sidebar: {
       '/en/install/': { base: '/en/install/', items: sidebarGuide() },
-      '/en/reference/': { base: '/en/reference/', items: sidebarReference() }
+      '/en/reference/': { base: '/en/reference/', items: sidebarReference() },
+      '/en/governance/': { base: '/en/governance/', items: sidebarGovernance() }
     },
 
     editLink: {
@@ -57,7 +58,7 @@ function nav(): DefaultTheme.NavItem[] {
     },
     {
       text: 'Governance',
-      link: '/en/governance/what-is-vitepress',
+      link: '/en/governance/team',
       activeMatch: '/en/governance/'
     },
     {
@@ -165,5 +166,20 @@ function sidebarReference(): DefaultTheme.SidebarItem[] {
         }
       ]
     }
+  ]
+}
+
+
+function sidebarGovernance(): DefaultTheme.SidebarItem[] {
+  return [
+    {
+      text: 'Governance',
+      collapsed: false,
+      items: [
+        { text: 'Teams', link: 'team' },
+        { text: 'RFC Process', link: 'rfc' },
+        { text: 'Working Group', link: 'group' },
+      ]
+    },
   ]
 }

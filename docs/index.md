@@ -4,28 +4,27 @@ layout: home
 
 hero:
   name: Sino
-  text: The Programming Language
-  tagline: A language empowering everyone to build reliable and efficient software.
+  text: 程序设计语言
+  tagline: 使每个人都能够构建可靠和高效的软件。
   actions:
     - theme: brand
-      text: Install Sino
+      text: 安装 Sino
       link: /install/how-to-install
     - theme: brand
-      text: Get Started
-      link: /learn/get-started
+      text: 马上开始
+      link: /learm/get-started
     - theme: alt
-      text: About Sino
+      text: 关于Sino
       link: /about
 
 features:
-  - title: Performance
-    details: Sino is blazingly fast and memory-efficient. with no runtime or garbage collector, it can power performance-critical services, run on embedded devices, and easily integrate with other languages.
-  - title: Reliability
-    details: Sino’s rich type system and ownership model guarantee memory-safety and thread-safety — enabling you to eliminate many classes of bugs at compile-time.
-  - title: Productivity
-    details: Sino has great documentation, a friendly compiler with useful error messages, and top-notch tooling — an integrated package manager and build tool, smart multi-editor support with auto-completion and type inspections, an auto-formatter, and more.
+  - title: 高性能
+    details: Sino 速度惊人且内存利用率极高。由于没有运行时和垃圾回收，它能够胜任对性能要求特别高的服务，可以在嵌入式设备上运行，还能轻松和其他语言集成。
+  - title: 可靠性
+    details: Sino 丰富的类型系统和所有权模型保证了内存安全和线程安全，让您在编译期就能够消除各种各样的错误。
+  - title: 生产力
+    details: Sino 拥有出色的文档、友好的编译器和清晰的错误提示信息， 还集成了一流的工具——包管理器和构建工具， 智能地自动补全和类型检验的多编辑器支持， 以及自动格式化代码等等。
 ---
-
 
 <!-- ## Getting Started
 
@@ -35,3 +34,4 @@ You can get started using VitePress right away using `npx`!
 npm init
 npx vitepress init
 ``` -->
+

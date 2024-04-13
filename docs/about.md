@@ -1,6 +1,6 @@
 # 关于
 
-Sino 是一种由中华科技（Ciumhoa Technology）研发的系统编程语言，其设计目标是安全性、并发性和实用性的平衡。Sino 的语法受到了 Rust 和 Python 的影响，它通过引入所有权系统和借用规则来提供更高级的内存安全性。
+Sino 是一种由中华科技（Ciumhoa Technology）研发的系统编程语言，现在由 Sino 基金会主导，其设计目标是安全性、并发性和实用性的平衡。Sino 的语法受到了 Rust 和 Python 的影响，它通过引入所有权系统和借用规则来提供更高级的内存安全性。
 
 ## 起源
 
@@ -17,7 +17,7 @@ Sino 的名字“Sino”源于中国历史上的秦朝，并且其使用的文�
 
 感谢以下赞助商的支持，使得 Sino 社区得以持续发展和创新：
 
-- **Ciumhoa**：Sino 的主要开发者和赞助者，Ciumhoa提供了大量的资源和支持，推动 Sino 的发展。
-- **Cinastan**：作为 Sino 的赞助商，Cinastan 在 Sino 生态系统的发展和推广中起到了重要作用。
+- **[Ciumhoa](https://www.ciumhoa.com/)**：Sino 的主要开发者和赞助者，Ciumhoa 提供了大量的资源和支持，推动 Sino 的发展。
+- **[Cinastan](https://www.cinastan.com/)**：作为 Sino 的元老级赞助商，Cinastan 在 Sino 生态系统的发展和推广中起到了重要作用。
 
   

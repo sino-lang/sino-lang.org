@@ -1,6 +1,6 @@
 # About
 
-Sino is a systems programming language developed by Ciumhoa Technology, aiming to strike a balance between safety, concurrency, and practicality. While Sino's syntax is influenced by Rust and Python, it distinguishes itself by introducing ownership and borrowing rules to offer advanced memory safety.
+Sino is a systems programming language initially developed by Ciumhoa Technology and is now led by the Sino Foundation. It aims to strike a balance between safety, concurrency, and practicality. While Sino's syntax is influenced by Rust and Python, it distinguishes itself by introducing ownership and borrowing rules to offer advanced memory safety.
 
 ## Origin
 
@@ -17,5 +17,5 @@ The name "Sino" is derived from the historical Qin Dynasty in China. Additionall
 
 We would like to thank the following sponsors for their support, enabling the continuous development and innovation of the Sino community:
 
-- **Ciumhoa**: The primary developers and sponsors of Sino, Ciumhoa provides significant resources and support to drive the development of Sino.
-- **Cinastan**: As a sponsor of Sino, Cinastan plays a crucial role in the growth and promotion of the Sino ecosystem.
+- **[Ciumhoa](https://www.ciumhoa.com/)**: The primary developers and sponsors of Sino, Ciumhoa Technology provides significant resources and support to drive the development of Sino.
+- **[Cinastan](https://www.cinastan.com/)**: As a Founding Sponsor of Sino, Cinastan plays a crucial role in the growth and promotion of the Sino ecosystem.

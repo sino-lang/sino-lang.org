@@ -13,7 +13,7 @@ export const en = defineConfig({
 
     sidebar: {
       '/en/install/': { base: '/en/install/', items: sidebarGuide() },
-      '/reference/': { base: '/en/reference/', items: sidebarReference() },
+      // '/reference/': { base: '/en/reference/', items: sidebarReference() },
       '/en/governance/': { base: '/en/governance/', items: sidebarGovernance() }
     },
 
@@ -38,22 +38,22 @@ function nav(): DefaultTheme.NavItem[] {
     },
     {
       text: 'Learn',
-      link: '/en/learn/what-is-vitepress',
+      link: '/en/learn/get-started',
       activeMatch: '/en/learn/'
     },
-    {
-      text: 'Playground',
-      link: '/en/playground/what-is-vitepress',
-      activeMatch: '/en/playground/'
-    },
+    // {
+    //   text: 'Playground',
+    //   link: '/en/playground/index',
+    //   activeMatch: '/en/playground/'
+    // },
     {
       text: 'Docs',
-      link: '/en/docs/what-is-vitepress',
+      link: '/en/docs/index',
       activeMatch: '/en/docs/'
     },
     {
       text: 'Tools',
-      link: '/en/tools/what-is-vitepress',
+      link: '/en/tools/index',
       activeMatch: '/en/tools/'
     },
     {
@@ -63,12 +63,12 @@ function nav(): DefaultTheme.NavItem[] {
     },
     {
       text: 'Community',
-      link: '/en/community/what-is-vitepress',
+      link: '/en/community/index',
       activeMatch: '/en/community/'
     },
     {
       text: 'Blog',
-      link: '/en/blog/site-config',
+      link: '/en/blog/index',
       activeMatch: '/en/blog/'
     },
     {
@@ -98,21 +98,9 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
       text: 'Introduction',
       collapsed: false,
       items: [
-        { text: 'What is VitePress?', link: 'what-is-vitepress' },
         { text: 'Getting Started', link: 'getting-started' },
         { text: 'Routing', link: 'routing' },
         { text: 'Deploy', link: 'deploy' }
-      ]
-    },
-    {
-      text: 'Writing',
-      collapsed: false,
-      items: [
-        { text: 'Markdown Extensions', link: 'markdown' },
-        { text: 'Asset Handling', link: 'asset-handling' },
-        { text: 'Frontmatter', link: 'frontmatter' },
-        { text: 'Using Vue in Markdown', link: 'using-vue' },
-        { text: 'Internationalization', link: 'i18n' }
       ]
     },
     {
@@ -137,42 +125,9 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
         { text: 'Sitemap Generation', link: 'sitemap-generation' }
       ]
     },
-    { text: 'Config & API Reference', base: '/reference/', link: 'site-config' }
   ]
 }
 
-function sidebarReference(): DefaultTheme.SidebarItem[] {
-  return [
-    {
-      text: 'Reference',
-      items: [
-        { text: 'Site Config', link: 'site-config' },
-        { text: 'Frontmatter Config', link: 'frontmatter-config' },
-        { text: 'Runtime API', link: 'runtime-api' },
-        { text: 'CLI', link: 'cli' },
-        {
-          text: 'Default Theme',
-          base: '/reference/default-theme-',
-          items: [
-            { text: 'Overview', link: 'config' },
-            { text: 'Nav', link: 'nav' },
-            { text: 'Sidebar', link: 'sidebar' },
-            { text: 'Home Page', link: 'home-page' },
-            { text: 'Footer', link: 'footer' },
-            { text: 'Layout', link: 'layout' },
-            { text: 'Badge', link: 'badge' },
-            { text: 'Team Page', link: 'team-page' },
-            { text: 'Prev / Next Links', link: 'prev-next-links' },
-            { text: 'Edit Link', link: 'edit-link' },
-            { text: 'Last Updated Timestamp', link: 'last-updated' },
-            { text: 'Search', link: 'search' },
-            { text: 'Carbon Ads', link: 'carbon-ads' }
-          ]
-        }
-      ]
-    }
-  ]
-}
 
 
 function sidebarGovernance(): DefaultTheme.SidebarItem[] {

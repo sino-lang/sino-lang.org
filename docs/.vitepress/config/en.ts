@@ -71,6 +71,11 @@ function nav(): DefaultTheme.NavItem[] {
       link: '/en/blog/site-config',
       activeMatch: '/en/blog/'
     },
+    {
+      text: 'About',
+      link: '/en/about',
+      activeMatch: '/en/about'
+    },
     // {
     //   text: pkg.version,
     //   items: [

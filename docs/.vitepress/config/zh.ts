@@ -99,6 +99,11 @@ function nav(): DefaultTheme.NavItem[] {
       link: '/blog/site-config',
       activeMatch: '/blog/'
     },
+    {
+      text: '关于',
+      link: '/about',
+      activeMatch: '/about'
+    },
     // {
     //   text: pkg.version,
     //   items: [

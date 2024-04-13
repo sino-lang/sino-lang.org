@@ -12,9 +12,9 @@ export const en = defineConfig({
     nav: nav(),
 
     sidebar: {
-      '/en/install/': { base: '/en/install/', items: sidebarGuide() },
-      '/en/reference/': { base: '/en/reference/', items: sidebarReference() },
-      '/en/governance/': { base: '/en/governance/', items: sidebarGovernance() }
+      '/install/': { base: '/install/', items: sidebarGuide() },
+      '/reference/': { base: '/reference/', items: sidebarReference() },
+      '/governance/': { base: '/governance/', items: sidebarGovernance() }
     },
 
     editLink: {
@@ -33,48 +33,48 @@ function nav(): DefaultTheme.NavItem[] {
   return [
     {
       text: 'Install',
-      link: '/en/install/how-to-install',
-      activeMatch: '/en/install/'
+      link: '/install/how-to-install',
+      activeMatch: '/install/'
     },
     {
       text: 'Learn',
-      link: '/en/learn/what-is-vitepress',
-      activeMatch: '/en/learn/'
+      link: '/learn/what-is-vitepress',
+      activeMatch: '/learn/'
     },
     {
       text: 'Playground',
-      link: '/en/playground/what-is-vitepress',
-      activeMatch: '/en/playground/'
+      link: '/playground/what-is-vitepress',
+      activeMatch: '/playground/'
     },
     {
       text: 'Docs',
-      link: '/en/docs/what-is-vitepress',
-      activeMatch: '/en/docs/'
+      link: '/docs/what-is-vitepress',
+      activeMatch: '/docs/'
     },
     {
       text: 'Tools',
-      link: '/en/tools/what-is-vitepress',
-      activeMatch: '/en/tools/'
+      link: '/tools/what-is-vitepress',
+      activeMatch: '/tools/'
     },
     {
       text: 'Governance',
-      link: '/en/governance/team',
-      activeMatch: '/en/governance/'
+      link: '/governance/team',
+      activeMatch: '/governance/'
     },
     {
       text: 'Community',
-      link: '/en/community/what-is-vitepress',
-      activeMatch: '/en/community/'
+      link: '/community/what-is-vitepress',
+      activeMatch: '/community/'
     },
     {
       text: 'Blog',
-      link: '/en/blog/site-config',
-      activeMatch: '/en/blog/'
+      link: '/blog/site-config',
+      activeMatch: '/blog/'
     },
     {
       text: 'About',
-      link: '/en/about',
-      activeMatch: '/en/about'
+      link: '/about',
+      activeMatch: '/'
     },
     // {
     //   text: pkg.version,
@@ -137,7 +137,7 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
         { text: 'Sitemap Generation', link: 'sitemap-generation' }
       ]
     },
-    { text: 'Config & API Reference', base: '/en/reference/', link: 'site-config' }
+    { text: 'Config & API Reference', base: '/reference/', link: 'site-config' }
   ]
 }
 
@@ -152,7 +152,7 @@ function sidebarReference(): DefaultTheme.SidebarItem[] {
         { text: 'CLI', link: 'cli' },
         {
           text: 'Default Theme',
-          base: '/en/reference/default-theme-',
+          base: '/reference/default-theme-',
           items: [
             { text: 'Overview', link: 'config' },
             { text: 'Nav', link: 'nav' },

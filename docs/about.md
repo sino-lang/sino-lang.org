@@ -1,23 +1,22 @@
-# 关于
 
-Sino 是一种由中华科技（Ciumhoa Technology）研发的系统编程语言，现在由 Sino 基金会主导，其设计目标是安全性、并发性和实用性的平衡。Sino 的语法受到了 Rust 和 Python 的影响，它通过引入所有权系统和借用规则来提供更高级的内存安全性。
+# About
 
-## 起源
+Sino is a systems programming language initially developed by Ciumhoa Technology and is now led by the Sino Foundation. It aims to strike a balance between safety, concurrency, and practicality. While Sino's syntax is influenced by Rust and Python, it distinguishes itself by introducing ownership and borrowing rules to offer advanced memory safety.
 
-Sino 的名字“Sino”源于中国历史上的秦朝，并且其使用的文件名后缀“sn”是陕西的缩写，其简称也是“秦”，代表着该地区丰富的历史和文化底蕴。其发展灵感也来自于这一地区的多样性和创新精神，致力于将这种精神融入到现代系统编程中。
+## Origin
 
-## 特点
+The name "Sino" is derived from the historical Qin Dynasty in China. Additionally, the file extension "sn" used by Sino stands for Shaanxi, with its abbreviation also being "Qin," symbolizing the rich historical and cultural heritage of this region. The development inspiration for Sino also stems from the diversity and innovative spirit of Shaanxi, aiming to integrate this spirit into modern systems programming.
 
-- **内存安全**：通过所有权系统和借用规则，Sino 可以在编译时防止空指针、数据竞态等常见的内存安全问题。
-- **并发性**：Sino 的并发模型使得编写并行和多线程代码变得更加容易和安全。
-- **性能**：Sino 的编译器能够生成高效的机器代码，使其成为处理系统级任务的理想选择。
-- **生态系统**：Sino 社区活跃，拥有丰富的库和框架，可以支持各种应用场景。
+## Features
 
-## 赞助商
+- **Memory Safety**: With ownership and borrowing rules, Sino prevents common memory safety issues like null pointers and data races at compile time.
+- **Concurrency**: Sino's concurrency model makes it easier and safer to write parallel and multi-threaded code.
+- **Performance**: Sino's compiler generates efficient machine code, making it an ideal choice for handling system-level tasks.
+- **Ecosystem**: The Sino community is active and vibrant, with a rich set of libraries and frameworks supporting various application scenarios.
 
-感谢以下赞助商的支持，使得 Sino 社区得以持续发展和创新：
+## Sponsors
 
-- **[Ciumhoa](https://www.ciumhoa.com/)**：Sino 的主要开发者和赞助者，Ciumhoa 提供了大量的资源和支持，推动 Sino 的发展。
-- **[Cinastan](https://www.cinastan.com/)**：作为 Sino 的元老级赞助商，Cinastan 在 Sino 生态系统的发展和推广中起到了重要作用。
+We would like to thank the following sponsors for their support, enabling the continuous development and innovation of the Sino community:
 
-  
+- **[Ciumhoa](https://www.ciumhoa.com/)**: The primary developers and sponsors of Sino, Ciumhoa Technology provides significant resources and support to drive the development of Sino.
+- **[Cinastan](https://www.cinastan.com/)**: As a Founding Sponsor of Sino, Cinastan plays a crucial role in the growth and promotion of the Sino ecosystem.

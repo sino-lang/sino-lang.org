@@ -12,11 +12,11 @@ export const zh = defineConfig({
     nav: nav(),
 
     sidebar: {
-      '/install/': { base: '/install/', items: sidebarGuide() },
-      '/learn/': { base: '/learn/', items: sidebarReference() },
+      '/zh/install/': { base: '/zh/install/', items: sidebarGuide() },
+      '/zh/learn/': { base: '/zh/learn/', items: sidebarReference() },
       // '/playground/': { base: '/learn/', items: sidebarReference() },
       // '/tools/': { base: '/learn/', items: sidebarReference() },
-      '/governance/': { base: '/governance/', items: sidebarGovernance() },
+      '/zh/governance/': { base: '/zh/governance/', items: sidebarGovernance() },
       // '/Community/': { base: '/learn/', items: sidebarReference() },
       // '/Nlog/': { base: '/learn/', items: sidebarReference() },
     },
@@ -61,48 +61,48 @@ function nav(): DefaultTheme.NavItem[] {
   return [
     {
       text: '安装',
-      link: '/install/how-to-install',
-      activeMatch: '/install/'
+      link: '/zh/install/how-to-install',
+      activeMatch: '/zh/install/'
     },
     {
       text: '学习',
-      link: '/learn/what-is-vitepress',
-      activeMatch: '/learn/'
+      link: '/zh/learn/what-is-vitepress',
+      activeMatch: '/zh/learn/'
     },
     {
       text: '实验',
-      link: '/playground/what-is-vitepress',
-      activeMatch: '/playground/'
+      link: '/zh/playground/what-is-vitepress',
+      activeMatch: '/zh/playground/'
     },
     {
       text: '文档',
-      link: '/docs/what-is-vitepress',
-      activeMatch: '/docs/'
+      link: '/zh/docs/what-is-vitepress',
+      activeMatch: '/zh/docs/'
     },
     {
       text: '工具',
-      link: '/tools/what-is-vitepress',
-      activeMatch: '/tools/'
+      link: '/zh/tools/what-is-vitepress',
+      activeMatch: '/zh/tools/'
     },
     {
       text: '治理',
-      link: '/governance/team',
-      activeMatch: '/governance/'
+      link: '/zh/governance/team',
+      activeMatch: '/zh/governance/'
     },
     {
       text: '社区',
-      link: '/community/what-is-vitepress',
-      activeMatch: '/community/'
+      link: '/zh/community/what-is-vitepress',
+      activeMatch: '/zh/community/'
     },
     {
       text: '博客',
-      link: '/blog/site-config',
-      activeMatch: '/blog/'
+      link: '/zh/blog/site-config',
+      activeMatch: '/zh/blog/'
     },
     {
       text: '关于',
-      link: '/about',
-      activeMatch: '/about'
+      link: '/zh/about',
+      activeMatch: '/zh/'
     },
     // {
     //   text: pkg.version,
